@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    #d5d4d2 3%,
+    #cebcab 6%,
+    #be8b59 8%,
+    #5f331d 9%,
+    #0a0c0b 10%
+  );
+}
+
+body {
+  min-height: -webkit-fill-available;
+  height: 100%;
+
+  margin: 0 auto;
+  font-size: calc(24px + 0.5vmin);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: "Amatic SC", cursive;
+  color: #0a0c0b;
+}
+
+main {
+  max-width: 60rem;
+  min-width: 360px;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  background-image: linear-gradient(
+    to bottom,
+    white 10%,
+    #fff897 15%,
+    #fae96f 25%,
+    #f6c101 35%,
+    #ec9d00 45%,
+    #df8d03 55%,
+    #c96e12 100%
+  );
+}
+
+main > * {
+  flex: 0;
+  display: block;
+
+  padding: 0.25em;
+  text-align: center;
+}
+
+footer {
+  flex: 0;
+
+  justify-self: flex-end;
+}
+
+input {
+  border: none;
+  outline: none;
+  font-family: "Amatic SC", cursive;
+  font-size: calc(24px + 0.5vmin);
+  padding: 0.5em;
+  text-align: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  display: none;
+}
+
+label {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.dev {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#my-pic {
+  display: block;
+  width: 4em;
+  height: 4em;
+  border-radius: 50% 50%;
+  text-align: center;
+}
+
+.liquor {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  margin: 0.5em;
+  padding: 0.25em 1em;
+  background-color: white;
+  color: #0a0c0b;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.stepper {
+  box-sizing: border-box;
+  padding: 0.5em;
+  background-color: white;
+  user-select: none;
+  cursor: pointer;
+}
+
+.liquor a {
+  width: 5rem;
+}
+
+@media (max-width: 813px) and (orientation: landscape) {
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  footer {
+    flex-basis: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+
+  #input-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .liquor {
+    flex-direction: column;
+  }
+}
