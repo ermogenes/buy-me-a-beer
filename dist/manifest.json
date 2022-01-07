@@ -39,5 +39,19 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
+  ],
+  "orientation": "portrait-primary",
+  "categories": ["education", "people", "pwa"],
+  "screenshots": [
+    {
+      "src": "screenshot_portrait.png",
+      "sizes": "1242x2208",
+      "type": "image/png"
+    },
+    {
+      "src": "screenshot_landscape.png",
+      "sizes": "2208x1242",
+      "type": "image/png"
+    }
   ]
 }
