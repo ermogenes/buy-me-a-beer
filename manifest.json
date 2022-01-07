@@ -2,7 +2,6 @@
   "theme_color": "#be8b59",
   "background_color": "#be8b59",
   "display": "fullscreen",
-  "scope": "/buy-me-a-beer/",
   "start_url": ".",
   "name": "Buy Ermogenes a beer",
   "short_name": "Beer to Ermogenes",
