@@ -1,13 +1,13 @@
 const beerPrice = 20;
 const coffeePrice = 10;
 
-document.addEventListener("DOMContentLoaded", () => {
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("sw.js");
-    });
-  }
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js");
+  });
+}
 
+document.addEventListener("DOMContentLoaded", () => {
   const quantityField = document.querySelector("input#qty");
 
   const stepperMinus = document.querySelector(".stepper.minus");
