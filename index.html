@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy Ermogenes a beer</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="apple-mobile-web-app-status-bar" content="#be8b59" />
+    <meta name="theme-color" content="#be8b59" />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="180x180"
+      href="apple-touch-icon.png"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="android-chrome-512x512.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="android-chrome-192x192.png"
+    />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <main>
+      <div>I'm going to buy</div>
+      <div class="dev">
+        <img
+          id="my-pic"
+          src="https://avatars.githubusercontent.com/u/14313064"
+          alt="Ermogenes"
+        />
+        Ermogenes
+      </div>
+      <div>
+        <label for="qty">quantity</label>
+        <div id="input-wrapper">
+          <span class="stepper minus">-</span>
+          <input
+            id="qty"
+            type="number"
+            name="qty"
+            value="1"
+            min="1"
+            max="100"
+            step="1"
+          />
+          <span class="stepper plus">+</span>
+        </div>
+      </div>
+      <div class="liquor">
+        <a href="#" id="beer">
+          <div class="price-tag beer">R$ 20,00</div>
+          🍺<br />Beer </a
+        ><span>or</span>
+        <a href="#" id="coffee">
+          <div class="price-tag coffee">R$ 10,00</div>
+          ☕<br />Coffee
+        </a>
+      </div>
+      <footer>Link to store</footer>
+    </main>
+  </body>
+
+  <script src="index.js"></script>
+</html>

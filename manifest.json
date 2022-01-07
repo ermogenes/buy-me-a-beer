@@ -1,0 +1,43 @@
+{
+  "theme_color": "#be8b59",
+  "background_color": "#be8b59",
+  "display": "fullscreen",
+  "scope": "/buy-me-a-beer",
+  "start_url": "/buy-me-a-beer",
+  "name": "Buy Ermogenes a beer",
+  "short_name": "Beer to Ermogenes",
+  "description": "Thank Ermogenes fo everithing, and buy him a beer",
+  "icons": [
+    {
+      "src": "favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "maskable_icon_x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
