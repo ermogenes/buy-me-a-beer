@@ -23,18 +23,6 @@ self.addEventListener("install", (event) => {
   );
 });
 
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    (async () => {
-      if ("navigationPreload" in self.registration) {
-        await self.registration.navigationPreload.enable();
-      }
-    })()
-  );
-
-  self.clients.claim();
-});
-
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches
