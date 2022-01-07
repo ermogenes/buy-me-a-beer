@@ -58,7 +58,14 @@
     {
       "name": "Home",
       "url": ".",
-      "description": "Buy Ermogenes a beer or a coffee"
+      "description": "Buy Ermogenes a beer or a coffee",
+      "icons": [
+        {
+          "src": "home-icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }
