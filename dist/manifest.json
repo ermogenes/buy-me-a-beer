@@ -53,5 +53,12 @@
       "sizes": "2208x1242",
       "type": "image/png"
     }
+  ],
+  "shortcuts" : [
+    {
+      "name": "Home",
+      "url": ".",
+      "description": "Buy Ermogenes a beer or a coffee"
+    }
   ]
 }
