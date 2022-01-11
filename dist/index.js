@@ -1,19 +1,3 @@
-if (!window["getDigitalGoodsService"]) {
-  window.location.replace("https://play.google.com/store/apps/details?id=io.github.ermogenes.twa");
-} else {
-  try {
-    const digitalGoodsService = await window.getDigitalGoodsService("https://play.google.com/billing");
-    console.log('gplay digitalGoodsService available', digitalGoodsService);
-    if (service) {
-      console.log('api v2');
-    } else {
-      console.log('api v1');
-    }
-  } catch (error) {
-    console.log('api v2 and gplaydigitalGoodsService not available');
-  }
-}
-
 const beerPrice = 20;
 const coffeePrice = 10;
 
@@ -22,6 +6,28 @@ if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js");
   });
 }
+
+window.addEventListener("load", async () => {
+  if (!window["getDigitalGoodsService"]) {
+    window.location.replace(
+      "https://play.google.com/store/apps/details?id=io.github.ermogenes.twa"
+    );
+  } else {
+    try {
+      const digitalGoodsService = await window.getDigitalGoodsService(
+        "https://play.google.com/billing"
+      );
+      console.log("gplay digitalGoodsService available", digitalGoodsService);
+      if (service) {
+        console.log("api v2");
+      } else {
+        console.log("api v1");
+      }
+    } catch (error) {
+      console.log("api v2 and gplaydigitalGoodsService not available");
+    }
+  }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const quantityField = document.querySelector("input#qty");
