@@ -1,9 +1,9 @@
 const beerPrice = 20;
 const coffeePrice = 10;
 
-const showMessage = (message) => {
+const showMessage = (message = "") => {
   document.querySelectorAll(".message").forEach((e) => {
-    e.innerHTML = "In-app payments only available in Android.";
+    e.innerHTML = message;
   });
 }
 
