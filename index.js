@@ -16,8 +16,8 @@ const updateItemsPrice = (prices) => {
   const quantity = quantityField.value;
   alert('after');
 
-  beerPriceTag.innerHTML = `R\$ ${quantity * beerPrice.toFixed(2)}`;
-  coffeePriceTag.innerHTML = `R\$ ${quantity * coffeePrice.toFixed(2)}`;
+  beerPriceTag.innerHTML = `R\$ ${quantity * beerPrice}`;
+  coffeePriceTag.innerHTML = `R\$ ${quantity * coffeePrice}`;
 
   alert('dispatch');
   quantityField.dispatchEvent(new Event("change"));
