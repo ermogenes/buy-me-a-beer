@@ -61,8 +61,8 @@ window.addEventListener("load", async () => {
         );
 
         updateItemsPrice({
-          beer: beerItem?.price?.value || 0,
-          coffee: coffee ? coffeeItem?.price?.value : 0,
+          beer: beerItem?.price?.value?.toFixed(2) || 0,
+          coffee: coffeeItem?.price?.value?.toFixed(2) || 0,
         });
 
         showMessage();
