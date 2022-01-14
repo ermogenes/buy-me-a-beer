@@ -56,10 +56,10 @@ window.addEventListener("load", async () => {
         );
 
         updateItemsPrice({
-          beer: beerItem.price.value,
-          coffee: coffeeItem.price.value,
+          beer: beerItem?.price?.value || 0,
+          coffee: coffeeItem?.price?.value || 0,
         });
-        
+
         showMessage(skuDetails);
       } else {
         showMessage(
