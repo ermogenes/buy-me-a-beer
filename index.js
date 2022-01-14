@@ -1,3 +1,6 @@
+let beerPrice = 0;
+let coffeePrice = 0;
+
 const showMessage = (message = "") => {
   document.querySelectorAll(".message").forEach((e) => {
     e.innerHTML = message;
@@ -5,17 +8,14 @@ const showMessage = (message = "") => {
 };
 
 const updateItemsPrice = (prices) => {
-  let beerPrice;
-  let coffeePrice;
+  const beerPriceTag = document.querySelector(".price-tag.beer");
+  const coffeePriceTag = document.querySelector(".price-tag.coffee");
+  const quantityField = document.querySelector("input#qty");
 
   if (prices) {
     beerPrice = prices.beer || 0;
     coffeePrice = prices.coffee || 0;
   }
-
-  const beerPriceTag = document.querySelector(".price-tag.beer");
-  const coffeePriceTag = document.querySelector(".price-tag.coffee");
-  const quantityField = document.querySelector("input#qty");
 
   const quantity = quantityField.value;
 
