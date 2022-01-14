@@ -12,8 +12,8 @@ const updateItemsPrice = (prices) => {
   const coffeePriceTag = document.querySelector(".price-tag.coffee");
   const quantityField = document.querySelector("input#qty");
 
-  beerPriceTag.innerHTML = `R\$ ${quantity * beerPrice},00`;
-  coffeePriceTag.innerHTML = `R\$ ${quantity * coffeePrice},00`;
+  beerPriceTag.innerHTML = `R\$ ${quantity * beerPrice.toFixed(2)}`;
+  coffeePriceTag.innerHTML = `R\$ ${quantity * coffeePrice.toFixed(2)}`;
 
   quantityField.dispatchEvent(new Event("change"));
 };
@@ -48,8 +48,8 @@ window.addEventListener("load", async () => {
           "buy_ermogenes_a_beer.coffee",
         ]);
 
-        showMessage(JSON.stringify(skuDetails));
-        return;
+        // showMessage(JSON.stringify(skuDetails));
+        // return;
 
         const beerItem = skuDetails.find(
           (item) => item.itemId === "buy_ermogenes_a_beer.beer"
@@ -60,7 +60,8 @@ window.addEventListener("load", async () => {
 
         updateItemsPrice({
           beer: beerItem?.price?.value || 0,
-          coffee: coffeeItem?.price?.value || 0,
+          // coffee: coffeeItem?.price?.value || 0,
+          coffee: 0,
         });
 
       } else {
