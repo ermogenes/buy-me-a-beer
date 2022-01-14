@@ -12,10 +12,8 @@ const updateItemsPrice = (prices) => {
   const coffeePriceTag = document.querySelector(".price-tag.coffee");
   const quantityField = document.querySelector("input#qty");
 
-  if (prices) {
-    beerPrice = prices.beer || 0;
-    coffeePrice = prices.coffee || 0;
-  }
+  beerPrice = prices.beer || 0;
+  coffeePrice = prices.coffee || 0;
 
   const quantity = quantityField.value;
 
@@ -60,8 +58,8 @@ window.addEventListener("load", async () => {
           (item) => item.itemId === "buy_ermogenes_a_beer.coffee"
         );
 
-        alert(beerItem);
-        alert(coffeeItem);
+        alert(JSON.stringify(beerItem));
+        alert(JSON.stringify(coffeeItem));
 
         updateItemsPrice({
           beer: beerItem?.price?.value || 0,
