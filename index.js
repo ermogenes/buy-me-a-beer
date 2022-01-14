@@ -9,9 +9,17 @@ if ("serviceWorker" in navigator) {
 
 window.addEventListener("load", async () => {
   if (!window["getDigitalGoodsService"]) {
-    window.location.replace(
-      "https://play.google.com/store/apps/details?id=io.github.ermogenes.twa"
-    );
+    document.querySelectorAll(".has-payment-only").forEach((e) => {
+      e.style.display = "none";
+    });
+
+    document.querySelectorAll(".hasnt-payment-only").forEach((e) => {
+      e.style.display = "";
+    });
+
+    document.querySelectorAll(".payment-button").forEach((e) => {
+      e.style.cursor = "not-allowed";
+    });
   } else {
     try {
       const digitalGoodsService = await window.getDigitalGoodsService(

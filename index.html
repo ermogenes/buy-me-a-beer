@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Thank Ermogenes fo everithing, and buy him a beer">
+    <meta
+      name="description"
+      content="Thank Ermogenes fo everithing, and buy him a beer"
+    />
     <title>Buy Ermogenes a beer</title>
     <link rel="stylesheet" href="style.css" />
     <meta name="apple-mobile-web-app-status-bar" content="#be8b59" />
@@ -42,7 +45,7 @@
         />
         Ermogenes
       </div>
-      <div>
+      <div class="has-payment-only">
         <label for="qty">quantity</label>
         <div id="input-wrapper">
           <span class="stepper minus">-</span>
@@ -59,17 +62,32 @@
         </div>
       </div>
       <div class="liquor">
-        <a href="#" id="beer">
-          <div class="price-tag beer">R$ 20,00</div>
+        <a href="#" id="beer" class="payment-button">
+          <div class="price-tag beer has-payment-only">R$ 20,00</div>
           🍺<br />Beer </a
         ><span>or</span>
-        <a href="#" id="coffee">
-          <div class="price-tag coffee">R$ 10,00</div>
+        <a href="#" id="coffee" class="payment-button">
+          <div class="price-tag coffee has-payment-only">R$ 10,00</div>
           ☕<br />Coffee
         </a>
       </div>
-      <footer>Link to store</footer>
+      <div class="hasnt-payment-only">
+        In-app payments only available in Android.
+      </div>
+      
     </main>
+    <footer>
+      <a
+        href="https://play.google.com/store/apps/details?id=io.github.ermogenes.twa&utm_source=pwa&utm_campaign=badge&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+        ><img
+          alt="Get it on Google Play"
+          src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+      /></a>
+      <small
+        >Google Play and the Google Play logo are trademarks of Google
+        LLC.</small
+      >
+    </footer>
   </body>
 
   <script src="index.js"></script>

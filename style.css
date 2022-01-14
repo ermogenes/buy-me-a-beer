@@ -7,40 +7,30 @@
 
 html {
   height: 100%;
-  background-image: linear-gradient(
-    to bottom,
-    #d5d4d2 3%,
-    #cebcab 6%,
-    #be8b59 8%,
-    #5f331d 9%,
-    #0a0c0b 10%
-  );
+  background-color: #c96e12;
 }
 
 body {
   min-height: -webkit-fill-available;
   height: 100%;
 
-  margin: 0 auto;
   font-size: calc(24px + 0.5vmin);
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
 
   font-family: "Amatic SC", cursive;
   color: #0a0c0b;
 }
 
 main {
-  max-width: 60rem;
-  min-width: 360px;
   flex: 1;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: stretch;
   background-image: linear-gradient(
     to bottom,
@@ -62,10 +52,42 @@ main > * {
   text-align: center;
 }
 
+main > div.hasnt-payment-only {
+  width: 50%;
+  align-self: center;
+  font-size: 0.5em;
+}
+
 footer {
   flex: 0;
-
   justify-self: flex-end;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #c96e12;
+}
+
+footer > * {
+  display: block;
+
+  padding-bottom: 0.5em;
+}
+
+footer a {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+footer img {
+  height: 3em;
+}
+
+footer small {
+  font-size: 0.5em;
 }
 
 input {
@@ -106,6 +128,7 @@ label {
 
 .liquor {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -133,18 +156,16 @@ a:hover {
   width: 5rem;
 }
 
-@media (max-width: 813px) and (orientation: landscape) {
+@media (max-width: 915px) and (orientation: landscape) {
   main {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
   }
 
-  footer {
-    flex-basis: 100%;
-    position: absolute;
-    bottom: 0;
+  footer img {
+    height: 2em;
   }
 
   #input-wrapper {
