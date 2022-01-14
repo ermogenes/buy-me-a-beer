@@ -12,8 +12,10 @@ const updateItemsPrice = (prices) => {
   const coffeePriceTag = document.querySelector(".price-tag.coffee");
   const quantityField = document.querySelector("input#qty");
 
-  beerPrice = prices.beer || 0;
-  coffeePrice = prices.coffee || 0;
+  if (prices) {
+    beerPrice = prices?.beer || 0;
+    coffeePrice = prices?.coffee || 0;
+  }
 
   const quantity = quantityField.value;
 
