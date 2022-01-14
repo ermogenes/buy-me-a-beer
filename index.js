@@ -12,16 +12,16 @@ const updateItemsPrice = (prices) => {
   const coffeePriceTag = document.querySelector(".price-tag.coffee");
   const quantityField = document.querySelector("input#qty");
 
-  showMessage('before');
+  alert('before');
   const quantity = quantityField.value;
-  showMessage('after');
+  alert('after');
 
   beerPriceTag.innerHTML = `R\$ ${quantity * beerPrice.toFixed(2)}`;
   coffeePriceTag.innerHTML = `R\$ ${quantity * coffeePrice.toFixed(2)}`;
 
-  showMessage('dispatch');
+  alert('dispatch');
   quantityField.dispatchEvent(new Event("change"));
-  showMessage('finish');
+  alert('finish');
 };
 
 if ("serviceWorker" in navigator) {
