@@ -64,6 +64,8 @@ Create a project, configure it for internal testing, and upload your `.aab`. Wai
 
 Now, your project is available from the URL and from the store.
 
-Create your Digital Asset Links file and upload to `.well-known/assetlinks.json`, to assert the link between site and app. You can use [this tool](https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool) to create it ([_it's safe_](https://web.dev/using-a-pwa-in-your-android-app/)).
+Create your Digital Asset Links file [here](https://developers.google.com/digital-asset-links/tools/generator) and upload to `/.well-known/assetlinks.json` on your root domain, to assert the link between site and app (i.e. for `https://domain.com/your-site` it must be accessible from `https://domain.com/.well-known/assetlinks.json` not by `https://domain.com/your-site/.well-known/assetlinks.json`).
+
+ You may use [this tool](https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool) to create it too ([_it's safe_](https://web.dev/using-a-pwa-in-your-android-app/)) The SHA-256 key may be taken from Play Console > Config > App integrity, as well the JSON code. There is an [API call](https://developer.android.com/training/app-links/verify-site-associations#test-dal-files) to check integrity.
 
 To create "get it on google play" button, use [this tool](https://play.google.com/intl/en_us/badges/).
