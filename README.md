@@ -60,9 +60,8 @@ You may not versioning this files. You can regenerate anytime.
 
 Create a [Google Developer Account](https://play.google.com/intl/pt-BR/console/about/) ($25, one time).
 
-Create a project, configure it, and upload your `.aab`. Wait for aproval.
+Create a project, configure it for internal testing, and upload your `.aab`. Wait for aproval (3-4 days).
 
 Now, your project is available from the URL and from the store.
 
-Download your Digital Asset Links file and upload to `.well-known/assetlinks.json`, to assert the link between site and app.
-
+Create your Digital Asset Links file and upload to `.well-known/assetlinks.json`, to assert the link between site and app. You can use [this tool](https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool) to create it ([_it's safe_](https://web.dev/using-a-pwa-in-your-android-app/)).
