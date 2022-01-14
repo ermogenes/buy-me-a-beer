@@ -1,6 +1,3 @@
-const beerPrice;
-const coffeePrice;
-
 const showMessage = (message = "") => {
   document.querySelectorAll(".message").forEach((e) => {
     e.innerHTML = message;
@@ -8,8 +5,17 @@ const showMessage = (message = "") => {
 }
 
 const updateItemsPrice = (prices) => {
-  beerPrice = prices.beer || 0;
-  coffeePrice = prices.coffee || 0;
+  const beerPrice = prices.beer || 0;
+  const coffeePrice = prices.coffee || 0;
+
+  const beerPriceTag = document.querySelector(".price-tag.beer");
+  const coffeePriceTag = document.querySelector(".price-tag.coffee");
+  const quantityField = document.querySelector("input#qty");
+
+  beerPriceTag.innerHTML = `R\$ ${quantity * beerPrice},00`;
+  coffeePriceTag.innerHTML = `R\$ ${quantity * coffeePrice},00`;
+
+  quantityField.dispatchEvent(new Event("change"));
 }
 
 if ("serviceWorker" in navigator) {
@@ -37,13 +43,19 @@ window.addEventListener("load", async () => {
       if (digitalGoodsService !== null) {
         showMessage("Google Play Billing DGSv2 available.");
 
-        const skuDetails = await digitalGoodsService.getDetails(["beer", "coffee"]);
+        const skuDetails = await digitalGoodsService.getDetails([
+          "buy_ermogenes_a_beer.beer",
+          "buy_ermogenes_a_beer.coffee"
+        ]);
 
+        updateItemsPrice({
+          beer: skuDetails["buy_ermogenes_a_beer.beer"].price.value,
+          coffee: skuDetails["buy_ermogenes_a_beer.coffee"].price.value,
+        })
         showMessage(skuDetails);
 
-
       } else {
-        showMessage("Google Play Billing DGSv1 available.");
+        showMessage("Google Play Billing DGSv1 is available but is not supported.");
       }
     } catch (error) {
       showMessage(`Google Play Billing DGS error: <p>${error.message}</p>`);
@@ -78,11 +90,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (quantity < 0) quantityField.value = quantity = 0;
     if (quantity > 100) quantityField.value = quantity = 100;
-
-    const beerPriceTag = document.querySelector(".price-tag.beer");
-    const coffeePriceTag = document.querySelector(".price-tag.coffee");
-
-    beerPriceTag.innerHTML = `R\$ ${quantity * beerPrice},00`;
-    coffeePriceTag.innerHTML = `R\$ ${quantity * coffeePrice},00`;
   });
 });
