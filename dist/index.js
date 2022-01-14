@@ -5,23 +5,28 @@ const showMessage = (message = "") => {
 };
 
 const updateItemsPrice = (prices) => {
-  const beerPrice = prices.beer || 0;
-  const coffeePrice = prices.coffee || 0;
+  let beerPrice;
+  let coffeePrice;
+
+  if (prices) {
+    beerPrice = prices.beer || 0;
+    coffeePrice = prices.coffee || 0;
+  }
 
   const beerPriceTag = document.querySelector(".price-tag.beer");
   const coffeePriceTag = document.querySelector(".price-tag.coffee");
   const quantityField = document.querySelector("input#qty");
 
-  alert('before');
+  alert("before");
   const quantity = quantityField.value;
-  alert('after');
+  alert("after");
 
   beerPriceTag.innerHTML = `R\$ ${quantity * beerPrice}`;
   coffeePriceTag.innerHTML = `R\$ ${quantity * coffeePrice}`;
 
-  alert('dispatch');
+  alert("dispatch");
   quantityField.dispatchEvent(new Event("change"));
-  alert('finish');
+  alert("finish");
 };
 
 if ("serviceWorker" in navigator) {
@@ -54,9 +59,6 @@ window.addEventListener("load", async () => {
           "buy_ermogenes_a_beer.coffee",
         ]);
 
-        // showMessage(JSON.stringify(skuDetails));
-        // return;
-
         const beerItem = skuDetails.find(
           (item) => item.itemId === "buy_ermogenes_a_beer.beer"
         );
@@ -66,10 +68,10 @@ window.addEventListener("load", async () => {
 
         updateItemsPrice({
           beer: beerItem?.price?.value || 0,
-          // coffee: coffeeItem?.price?.value || 0,
-          coffee: 0,
+          coffee: coffee ? coffeeItem?.price?.value : 0,
         });
 
+        showMessage();
       } else {
         showMessage(
           "Google Play Billing DGSv1 is available but is not supported."
@@ -108,5 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (quantity < 0) quantityField.value = quantity = 0;
     if (quantity > 100) quantityField.value = quantity = 100;
+
+    updateItemsPrice();
   });
 });
