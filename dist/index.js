@@ -11,6 +11,7 @@ const updateItemsPrice = (prices) => {
   const beerPriceTag = document.querySelector(".price-tag.beer");
   const coffeePriceTag = document.querySelector(".price-tag.coffee");
   const quantityField = document.querySelector("input#qty");
+  const quantity = quantityField.value;
 
   beerPriceTag.innerHTML = `R\$ ${quantity * beerPrice.toFixed(2)}`;
   coffeePriceTag.innerHTML = `R\$ ${quantity * coffeePrice.toFixed(2)}`;
