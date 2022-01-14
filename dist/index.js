@@ -19,8 +19,8 @@ const updateItemsPrice = (prices) => {
 
   const quantity = quantityField.value;
 
-  beerPriceTag.innerHTML = `R\$ ${quantity * beerPrice}`;
-  coffeePriceTag.innerHTML = `R\$ ${quantity * coffeePrice}`;
+  beerPriceTag.innerHTML = `R\$ ${(quantity * beerPrice).toFixed(2)}`;
+  coffeePriceTag.innerHTML = `R\$ ${(quantity * coffeePrice).toFixed(2)}`;
 };
 
 if ("serviceWorker" in navigator) {
@@ -61,8 +61,8 @@ window.addEventListener("load", async () => {
         );
 
         updateItemsPrice({
-          beer: beerItem?.price?.value?.toFixed(2) || 0,
-          coffee: coffeeItem?.price?.value?.toFixed(2) || 0,
+          beer: beerItem?.price?.value || 0,
+          coffee: coffeeItem?.price?.value || 0,
         });
 
         showMessage();
