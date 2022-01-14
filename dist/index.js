@@ -2,7 +2,7 @@ const showMessage = (message = "") => {
   document.querySelectorAll(".message").forEach((e) => {
     e.innerHTML = message;
   });
-}
+};
 
 const updateItemsPrice = (prices) => {
   const beerPrice = prices.beer || 0;
@@ -16,7 +16,7 @@ const updateItemsPrice = (prices) => {
   coffeePriceTag.innerHTML = `R\$ ${quantity * coffeePrice},00`;
 
   quantityField.dispatchEvent(new Event("change"));
-}
+};
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
@@ -41,21 +41,30 @@ window.addEventListener("load", async () => {
         "https://play.google.com/billing"
       );
       if (digitalGoodsService !== null) {
-        showMessage("Google Play Billing DGSv2 available.");
+        showMessage("Billing info...");
 
         const skuDetails = await digitalGoodsService.getDetails([
           "buy_ermogenes_a_beer.beer",
-          "buy_ermogenes_a_beer.coffee"
+          "buy_ermogenes_a_beer.coffee",
         ]);
 
-        updateItemsPrice({
-          beer: skuDetails["buy_ermogenes_a_beer.beer"].price.value,
-          coffee: skuDetails["buy_ermogenes_a_beer.coffee"].price.value,
-        })
-        showMessage(skuDetails);
+        const beerItem = skuDetails.find(
+          (item) => item.itemId === "buy_ermogenes_a_beer.beer"
+        );
+        const coffeeItem = skuDetails.find(
+          (item) => item.itemId === "buy_ermogenes_a_beer.coffee"
+        );
 
+        updateItemsPrice({
+          beer: beerItem.price.value,
+          coffee: coffeeItem.price.value,
+        });
+        
+        showMessage(skuDetails);
       } else {
-        showMessage("Google Play Billing DGSv1 is available but is not supported.");
+        showMessage(
+          "Google Play Billing DGSv1 is available but is not supported."
+        );
       }
     } catch (error) {
       showMessage(`Google Play Billing DGS error: <p>${error.message}</p>`);
