@@ -6,7 +6,13 @@
   "name": "Buy Ermogenes a beer",
   "short_name": "Beer to Ermogenes",
   "description": "Thank Ermogenes fo everithing, and buy him a beer",
-  "prefer_related_applications": false,
+  "prefer_related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=io.github.ermogenes.twa",
+      "id": "io.github.ermogenes.twa"
+    }
+  ],
   "icons": [
     {
       "src": "favicon-16x16.png",
@@ -54,7 +60,7 @@
       "type": "image/png"
     }
   ],
-  "shortcuts" : [
+  "shortcuts": [
     {
       "name": "Home",
       "url": ".",
