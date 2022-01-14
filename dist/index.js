@@ -1,10 +1,15 @@
-const beerPrice = 20;
-const coffeePrice = 10;
+const beerPrice;
+const coffeePrice;
 
 const showMessage = (message = "") => {
   document.querySelectorAll(".message").forEach((e) => {
     e.innerHTML = message;
   });
+}
+
+const updateItemsPrice = (prices) => {
+  beerPrice = prices.beer || 0;
+  coffeePrice = prices.coffee || 0;
 }
 
 if ("serviceWorker" in navigator) {
@@ -31,6 +36,12 @@ window.addEventListener("load", async () => {
       );
       if (digitalGoodsService !== null) {
         showMessage("Google Play Billing DGSv2 available.");
+
+        const skuDetails = await digitalGoodsService.getDetails(["beer", "coffee"]);
+
+        showMessage(skuDetails);
+
+
       } else {
         showMessage("Google Play Billing DGSv1 available.");
       }
