@@ -60,6 +60,9 @@ window.addEventListener("load", async () => {
           (item) => item.itemId === "buy_ermogenes_a_beer.coffee"
         );
 
+        alert(beerItem);
+        alert(coffeeItem);
+
         updateItemsPrice({
           beer: beerItem?.price?.value || 0,
           coffee: coffeeItem?.price?.value || 0,
