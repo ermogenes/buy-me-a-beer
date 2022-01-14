@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.ermogenes.twa",
+      "sha256_cert_fingerprints": [
+        "93:21:7F:96:48:0A:18:DF:51:19:6F:AD:9F:75:B6:E2:51:9C:81:F4:3F:8A:D8:B4:EE:4F:06:CE:9D:C4:51:F9"
+      ]
+    }
+  }
+]
