@@ -156,6 +156,10 @@ a:hover {
   width: 5rem;
 }
 
+.message {
+  font-size: 0.75em;
+}
+
 @media (max-width: 915px) and (orientation: landscape) {
   main {
     flex-direction: row;

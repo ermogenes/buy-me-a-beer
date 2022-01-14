@@ -1,6 +1,12 @@
 const beerPrice = 20;
 const coffeePrice = 10;
 
+const showMessage = (message) => {
+  document.querySelectorAll(".message").forEach((e) => {
+    e.innerHTML = "In-app payments only available in Android.";
+  });
+}
+
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("sw.js");
@@ -13,9 +19,7 @@ window.addEventListener("load", async () => {
       e.style.display = "none";
     });
 
-    document.querySelectorAll(".hasnt-payment-only").forEach((e) => {
-      e.style.display = "";
-    });
+    showMessage("In-app payments only available in Android.");
 
     document.querySelectorAll(".payment-button").forEach((e) => {
       e.style.cursor = "not-allowed";
@@ -25,14 +29,13 @@ window.addEventListener("load", async () => {
       const digitalGoodsService = await window.getDigitalGoodsService(
         "https://play.google.com/billing"
       );
-      console.log("gplay digitalGoodsService available", digitalGoodsService);
       if (service) {
-        console.log("api v2");
+        showMessage("Google Play Billing DGSv2 available.");
       } else {
-        console.log("api v1");
+        showMessage("Google Play Billing DGSv1 available.");
       }
     } catch (error) {
-      console.log("api v2 and gplaydigitalGoodsService not available");
+      showMessage("Google Play Billing DGS error.");
     }
   }
 });
