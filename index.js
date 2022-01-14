@@ -48,7 +48,7 @@ window.addEventListener("load", async () => {
           "buy_ermogenes_a_beer.coffee",
         ]);
 
-        showMessage(skuDetails);
+        showMessage(JSON.stringify(skuDetails));
         return;
 
         const beerItem = skuDetails.find(
