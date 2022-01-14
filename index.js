@@ -29,7 +29,7 @@ window.addEventListener("load", async () => {
       const digitalGoodsService = await window.getDigitalGoodsService(
         "https://play.google.com/billing"
       );
-      if (service) {
+      if (digitalGoodsService !== null) {
         showMessage("Google Play Billing DGSv2 available.");
       } else {
         showMessage("Google Play Billing DGSv1 available.");
