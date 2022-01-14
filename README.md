@@ -69,3 +69,7 @@ Create your Digital Asset Links file [here](https://developers.google.com/digita
  You may use [this tool](https://play.google.com/store/apps/details?id=dev.conn.assetlinkstool) to create it too ([_it's safe_](https://web.dev/using-a-pwa-in-your-android-app/)) The SHA-256 key may be taken from Play Console > Config > App integrity, as well the JSON code. There is an [API call](https://developer.android.com/training/app-links/verify-site-associations#test-dal-files) to check integrity.
 
 To create "get it on google play" button, use [this tool](https://play.google.com/intl/en_us/badges/).
+
+## Extras
+
+Google trial APIs should be activated in [Chrome Origin Trials](https://developer.chrome.com/origintrials/#/trials/active) first. The token must be placed in a `meta` tag.
