@@ -35,7 +35,7 @@ window.addEventListener("load", async () => {
         showMessage("Google Play Billing DGSv1 available.");
       }
     } catch (error) {
-      showMessage("Google Play Billing DGS error.");
+      showMessage(`Google Play Billing DGS error: <p>${error.message}</p>`);
     }
   }
 });
