@@ -48,6 +48,9 @@ window.addEventListener("load", async () => {
           "buy_ermogenes_a_beer.coffee",
         ]);
 
+        showMessage(skuDetails);
+        return;
+
         const beerItem = skuDetails.find(
           (item) => item.itemId === "buy_ermogenes_a_beer.beer"
         );
@@ -60,7 +63,6 @@ window.addEventListener("load", async () => {
           coffee: coffeeItem?.price?.value || 0,
         });
 
-        showMessage(skuDetails);
       } else {
         showMessage(
           "Google Play Billing DGSv1 is available but is not supported."
